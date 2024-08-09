@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriDiag</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.htm"> Home</a></li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li>Blog</li>
+            <li><a href="logi.htm">Contact</a></li>
+            <li>
+                <i class='bx bx-user'></i>
+                <label for="bx-user"><a href="logi.htm">Login</a></label>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="contact">
+            <h1>Contact Us</h1>
+            <p>Interested in knowing more, requesting a large product order, or would just like to say hi? Fill the form
+                below to get in touch with the Farm team.</p>
+            <form action="/submit-contact-form" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" name="full_name" id="full-name" placeholder="Robert Wilson">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="example@yourmail.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" name="phone" id="phone" placeholder="(485) 186 - 0457">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select name="subject" id="subject">
+                            <option value="General Question">General Question</option>
+                            <option value="Product Inquiry">Product Inquiry</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message"
+                        placeholder="Hello, I would like to get in touch with Farm about..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </div>
+            </form>
+        </div>
+        <div class="image-side"></div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h1>AgriDiag</h1>
+                <p>Copyright © AGRIDIAG | Designed by <a href="#">BRIX Templates</a> – Powered by <a href="#">Webflow</a>
+                </p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="home.htm">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="contact.css">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact us:</h4>
+                    <ul>
+                        <li><b>Ph No:</b> +91 1234567891</li>
+                        <li><b>Email:</b> agridiag@gmail.com</li>
+                        <li><b>Address:</b></li>
+                        <li>Kmit</li>
+                        <li>Narayanaguda</li>
+                        <li>Hyderabad</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Join Our Mailing List</h4>
+                    <p>Join our weekly newsletter to discover about the special process behind Farm's products.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
