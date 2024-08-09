@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-image: url('../../../assets/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+}
+
+nav {
+    background-color: rgba(89, 168, 89, 0.5);
+}
+
+nav ul {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+li {
+    padding: 10px;
+    list-style: none;
+    color: rgba(38, 38, 255, 0.8);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.login {
+    margin: auto;
+    border: 0.5px solid rgba(255, 251, 251, .2);
+    height: 300px;
+    width: 300px;
+    position: relative;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+}
+
+.login h1 {
+    text-align: center;
+}
+
+.input-box {
+    height: 50px;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    border: 2px solid rgba(128, 128, 128, 0.7);
+    padding: 0px 10px;
+}
+
+.input-box i {
+    position: absolute;
+    right: 50px;
+    top: 20px;
+}
+
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.remember a {
+    text-decoration: none;
+    color: rgba(38, 38, 255, 0.8);
+    font-weight: bold;
+}
+
+.forget-password {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.forget-password button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(89, 168, 89, 0.8);
+    color: white;
+    cursor: pointer;
+}
+
+.create {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create a {
+    text-decoration: none;
+    color: rgba(38, 38, 255, 0.8);
+    font-weight: bold;
+}
