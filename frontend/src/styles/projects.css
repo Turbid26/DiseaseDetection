@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: 100vh;
+    margin: 0;
+    /* background-image: url('../../public/assets/login-background.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.pro {
+    position:relative;
+    top : 40px;
+    left : 150px;
+    bottom : 150px;
+    height : fit-content;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 20px;
+    border: 1px solid black; /* Ensure border is visible */
+    box-sizing: border-box;
+    border-radius:10px; /* Include padding and border in width/height */
+    /* box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.7); */
+    /* display: flex; */
+}
+#bruce {
+    width: 300px;
+    height: 300px;
+    float: right;
+    /* z-index: 10;
+    position: absolute; */
+    right:0px;
+    top:0px
+    
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /*Ensure link color matches the surrounding text*/ 
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+/* Navigation Bar */
+.navigation {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: yellow;
+    z-index: 1;
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Spacing between menu items */
+}
+
+.navigation li {
+    list-style: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.leaf {
+    position: absolute;
+    top: -50px;
+    /* Start just above the viewport */
+    font-size: 2rem;
+    /* Adjust size as needed */
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
+}
