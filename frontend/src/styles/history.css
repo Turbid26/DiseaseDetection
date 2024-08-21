@@ -45,26 +45,53 @@
     background-position: center;
     background-attachment: fixed;
 } */
+.project {
+    position:relative;
+    top : 100px;
+    left : 150px;
+    bottom : 150px;
+    height : fit-content;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    padding: 20px;
+    border: 1px solid black; /* Ensure border is visible */
+    box-sizing: border-box;
+    border-radius:10px;
+    z-index: 100; /* Include padding and border in width/height */
+    /* box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.7); */
+    /* display: flex; */
+}
 #p {
-    width: 300px;
-    height: 300px;
+    height: 250px;
     float: right;
-    /* z-index: 10;
-    position: absolute; */
+    /* z-index: 10;*/
+    position: relative;
     right:0px;
     top:0px
+    
 }
-.project {
-    height : 500px;
-    width : 1000px;
-    border-color: black;
-    border-style: solid;
-    display: flex;
-    justify-content:space-evenly;
-    margin : auto;
-    align-items: center;
-    top : 500px;
+.b{
+    align-content: center;
 }
-h1{
-    margin : auto;;
+a{
+    text-decoration: none;
+}
+.leaf {
+    position: absolute;
+    top: -50px;
+    /* Start just above the viewport */
+    font-size: 2rem;
+    /* Adjust size as needed */
+    opacity: 0.8;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
 }

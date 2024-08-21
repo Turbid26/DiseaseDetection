@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Navigation Bar -->
         <nav class="navigation">
             <ul>
                 <a href="home.htm"><li>Home</li></a>
@@ -16,17 +15,67 @@
                 <li>History</li>
                 <li>Blog</li>
                 <a href="contact.htm"><li>Contact</li></a>
-                <li>
-                    <a href="logi.htm"><i class='bx bx-user'></i></a>
+                <a href="logi.htm"><li>
+                    <i class='bx bx-user'></i>
                     <label for="bx-user">Login</label>
-                </li>
+                </li></a>
             </ul>
         </nav>
     </div>
-    <h1>History Page</h1>
-    <div class="project">
-        <a href="projects.htm"><p>project1</p></a>
-        <img id="p" src="plant.png">
-    </div>    
+    <main>
+
+        <div class="b">
+            <h1 style = 'text-align : center;position : relative;top : 100px;'>History Page</h1>
+            <div class="project">
+                <img id="p" src="plant.png">
+                    <div >
+                        <a href="projects.htm" style="text-decoration: none;" ><h1 style = 'position : relative;left : 350px;color:darkgreen;'>Project1</h1>
+                        <p style = 'font-size: 20px; color:black;z-index:10;' >
+                            The standard chunk of Lorem Ipsum used since thLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        </p> 
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.style.zIndex=0;
+            let a = Math.random();
+            if (a > 0.5) {
+
+                leaf.textContent = '🍃';
+            }
+            else if (a <0.25 )
+            {
+                leaf.textContent ="🍂";
+            }
+            else if (a< 0.4)
+            {
+                leaf.textContent="🌿";
+            }
+            else if(a<0.6){
+                leaf.textContent="🍁";
+            }
+            else if(a<0.7){
+                leaf.content = '🍀'
+            }            leaf.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+            const fallDuration = Math.random() * 2 + 2; // Random fall duration between 5s and 10s
+            leaf.style.animationDuration = `${fallDuration}s`;
+            document.body.appendChild(leaf);
+
+            // Remove the leaf after it falls out of the viewport
+            setTimeout(() => {
+                leaf.remove();
+            }, fallDuration * 1000);
+        }
+        function startFallingLeaves() {
+            setInterval(createLeaf, 500); // Create a new leaf every 500ms
+        }
+
+        window.onload = startFallingLeaves;
+    </script>
 </body>
 </html>
