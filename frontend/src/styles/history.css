@@ -45,28 +45,29 @@
     background-position: center;
     background-attachment: fixed;
 } */
-.project {
+#project {
     position:relative;
     top : 100px;
     left : 150px;
     bottom : 150px;
     height : fit-content;
     width: 80%;
-    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+    background-color: rgba(251, 243, 2, 0.7); /* Semi-transparent white background */
     padding: 20px;
     border: 1px solid black; /* Ensure border is visible */
     box-sizing: border-box;
     border-radius:10px;
-    z-index: 100; /* Include padding and border in width/height */
+    z-index: 100; 
+    /* Include padding and border in width/height */
     /* box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.7); */
     /* display: flex; */
 }
 #p {
-    height: 250px;
+    height: 200px;
     float: right;
     /* z-index: 10;*/
     position: relative;
-    right:0px;
+    right:90px;
     top:0px
     
 }
@@ -85,7 +86,24 @@ a{
     opacity: 0.8;
     animation: fall linear infinite;
 }
+#project:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    /* transition-duration: 1s; */
 
+    /* background-color: red; */
+}
+#arr{
+    height : 50px;
+    float: right;
+    /* z-index: 10;*/
+    position: relative;
+    right:0px;
+    top:90px;
+}
+#arr:hover{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+}
 @keyframes fall {
     0% {
         transform: translateY(-50px);

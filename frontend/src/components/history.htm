@@ -21,24 +21,27 @@
                 </li></a>
             </ul>
         </nav>
-    </div>
     <main>
 
         <div class="b">
             <h1 style = 'text-align : center;position : relative;top : 100px;'>History Page</h1>
-            <a href="projects.htm" ><div class="project">
+            <div id="project">
+                <a href="projects.htm" target = "_main" ><img id ="arr" src="/DiseaseDetection/frontend/public/assets/icons8-arrow-96.png" ></a>
                 <img id="p" src="plant.png">
-                    <div >
                         <h1 style = 'position : relative;left : 350px;color:darkgreen;'>Project1</h1>
-                        <p style = 'font-size: 20px; color:black;z-index:10;' >
-                            The standard chunk of Lorem Ipsum used since thLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                        <p style = 'font-size: 20px; color:black;' >
+                            plant name:tomato
+                            <br>
+                            scientific name:solanum lycopersicum
+                            <br>
+                            disease diagnosed:
+                            <br>
+                            choked
                         </p> 
-                        
-                    </div>
             </div>
-            </a>
         </div>
     </main>
+    </div>
     <script>
         function createLeaf() {
             const leaf = document.createElement('div');
