@@ -5,7 +5,7 @@ body {
 }
 
 .navigation {
-    background-color: #f4f4f4;
+    background-color: yellow;
     padding: 1rem 0;
     text-align: center;
 }
@@ -79,7 +79,7 @@ body {
 }
 
 .post {
-    background-color: #f9f9f9;
+    background-color: yellow;
     padding: 20px;
     border-radius: 5px;
     border: 1px solid #ddd;
