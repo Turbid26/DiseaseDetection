@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriDiag Blog</title>
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navigation">
+        <ul>
+            <li><a href="home.htm"> Home</a></li>
+            <li>Services</li>
+            <li>Projects</li>
+            <li><a href="blog.htm">Blog</a></li>
+            <li><a href="contact.htm">Contact</a></li>
+            <li>
+                <i class='bx bx-user'></i>
+                <label for="bx-user"><a href="logi.htm">Login</a></label>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for plant diseases or blogs...">
+        <button onclick="searchBlog()">Search</button>
+    </div>
+
+    <!-- Basic Information Section -->
+    <div class="container">
+        <div class="blog-intro">
+            <h1>Prevalent Plant Diseases in India</h1>
+            <p>India faces numerous plant diseases that can significantly impact crop yield and quality. Here are some of the most common diseases currently affecting crops in India:</p>
+        </div>
+
+        <!-- Blog Section -->
+        <div class="blog-posts">
+            <article class="post">
+                <h2><a href="post1.html">Powdery Mildew in Grapes</a></h2>
+                <p>Powdery mildew is a fungal disease that affects grapes and other crops, causing white powdery spots on leaves and fruits. Learn how to identify and manage this disease effectively...</p>
+                <a href="post1.html" class="read-more">Read More</a>
+            </article>
+
+            <article class="post">
+                <h2><a href="post2.html">Leaf Rust in Wheat</a></h2>
+                <p>Leaf rust is one of the most devastating fungal diseases affecting wheat in India. Discover symptoms, preventive measures, and treatment options...</p>
+                <a href="post2.html" class="read-more">Read More</a>
+            </article>
+
+            <article class="post">
+                <h2><a href="post3.html">Bacterial Blight in Rice</a></h2>
+                <p>Bacterial blight is a serious disease in rice crops, causing wilting and death of plants. Explore management practices to control its spread...</p>
+                <a href="post3.html" class="read-more">Read More</a>
+            </article>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h1>AgriDiag</h1>
+                <p>Copyright © AGRIDIAG | Designed by <a href="#">BRIX Templates</a> – Powered by <a href="#">Webflow</a>
+                </p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Pages</h4>
+                    <ul>
+                        <li><a href="home.htm">Home</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="contact.htm">Contact</a></li>
+                        <li><a href="blog.htm">Blog</a></li>
+                        <li><a href="#">Products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact us:</h4>
+                    <ul>
+                        <li><b>Ph No:</b> +91 1234567891</li>
+                        <li><b>Email:</b> agridiag@gmail.com</li>
+                        <li><b>Address:</b></li>
+                        <li>Kmit</li>
+                        <li>Narayanaguda</li>
+                        <li>Hyderabad</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Join Our Mailing List</h4>
+                    <p>Join our weekly newsletter to discover about the special process behind Farm's products.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
