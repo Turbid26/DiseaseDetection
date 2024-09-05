@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriDiagnosis</title>
+    <style>
+        /* Inline CSS Styles */
+
+        body {
+            background-image: url(../../public/assets/login-background.jpg);
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 300px;
+            text-align: center;
+            border-radius: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 500px;
+            height: 500px;
+            background-color: rgba(89, 168, 89, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+                opacity: 0.4;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0.8;
+            }
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin: 0;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="email"],
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 50px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 40%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 20px;
+            }
+
+            input[type="email"],
+            input[type="text"],
+            input[type="password"] {
+                width: calc(100% - 10px);
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Forgot Your Password?</h2>
+
+    <!-- Step 1: Enter Email -->
+    <div id="step1">
+        <form id="email-form">
+            <label for="email">Enter your email address:</label><br>
+            <input type="email" id="email" placeholder="Email" name="email" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="email-error" class="message"></div>
+    </div>
+
+    <!-- Step 2: Enter Username -->
+    <div id="step2" style="display: none;">
+        <form id="username-form">
+            <label for="username">Enter your username:</label><br>
+            <input type="text" id="username" placeholder="Username" name="username" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="username-error" class="message"></div>
+    </div>
+
+    <!-- Step 3: Reset Password -->
+    <div id="step3" style="display: none;">
+        <form id="reset-form">
+            <input type="hidden" id="user-email">
+            <input type="hidden" id="user-username">
+            <label for="new-password">Enter new password:</label><br>
+            <input type="password" id="new-password" required><br><br>
+            <label for="confirm-password">Confirm new password:</label><br>
+            <input type="password" id="confirm-password" required><br><br>
+            <button type="submit">Confirm</button>
+        </form>
+        <div id="password-error" class="message"></div>
+    </div>
+
+    <!-- Step 4: Success Message -->
+    <div id="step4" style="display: none;">
+        <h2>Password has been reset successfully.</h2>
+        <a href="../components/logi.htm">Click here to login</a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Simulated database of users
+        const users = {
+            "user@example.com": {
+                password: "password123",
+                username: "user123"
+            }
+        };
+
+        // Step 1: Email verification
+        document.getElementById('email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+
+            if (users[email]) {
+                document.getElementById('user-email').value = email;
+                document.getElementById('step1').style.display = 'none';
+                document.getElementById('step2').style.display = 'block';
+            } else {
+                document.getElementById('email-error').textContent = 'Email address not found.';
+            }
+        });
+
+        // Step 2: Username verification
+        document.getElementById('username-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('user-email').value;
+
+            if (users[email].username === username) {
+                document.getElementById('user-username').value = username;
+                document.getElementById('step2').style.display = 'none';
+                document.getElementById('step3').style.display = 'block';
+            } else {
+                document.getElementById('username-error').textContent = 'Username does not match the provided email.';
+            }
+        });
+
+        // Step 3: Password reset
+        document.getElementById('reset-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newPassword = document.getElementById('new-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (newPassword === confirmPassword) {
+                // In a real application, update the user's password in the database here
+                document.getElementById('step3').style.display = 'none';
+                document.getElementById('step4').style.display = 'block';
+            } else {
+                document.getElementById('password-error').textContent = 'Passwords do not match.';
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
