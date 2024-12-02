@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Wikipedia Summary Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full md:w-1/2 lg:w-1/3 border-2 border-green-600">
+        <h1 class="text-3xl font-bold text-center mb-8">Plant Disease </h1>
+        <div class="flex flex-col mb-4">
+            <label for="topic" class="text-lg font-semibold mb-2">Enter Topic:</label>
+            <input type="text" id="topic" class="border border-gray-300 rounded-md py-2 px-3 focus:outline-none">
+        </div>
+        <div class="flex justify-center space-x-4">
+            <button id="searchButton"
+                class="bg-green-500 text-white px-6 py-2 rounded-md focus:outline-none">Search</button>
+            <button id="clearButton"
+                class="bg-red-500 text-white px-6 py-2 rounded-md focus:outline-none">Clear</button>
+            <button id="downloadButton"
+                class="bg-blue-500 text-white px-6 py-2 rounded-md focus:outline-none hidden">Download</button>
+        </div>
+        <div id="summary" class="mt-8"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchButton = document.getElementById('searchButton');
+            const clearButton = document.getElementById('clearButton');
+            const topicInput = document.getElementById('topic');
+            const summaryDiv = document.getElementById('summary');
+            const downloadButton = document.getElementById('downloadButton');
+
+            searchButton.addEventListener('click', function () {
+                const topic = topicInput.value.trim();
+                if (topic === '') {
+                    alert('Please enter a topic.');
+                    return;
+                }
+
+                fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${topic}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.title && data.extract) {
+                            summaryDiv.innerHTML = `
+                                <h2 class="text-xl font-semibold mb-4">${data.title}</h2>
+                                <p>${data.extract}</p>
+                            `;
+                            downloadButton.classList.remove('hidden');
+
+                            downloadButton.addEventListener('click', function () {
+                                const blob = new Blob([data.extract], { type: 'text/plain' });
+                                const url = window.URL.createObjectURL(blob);
+                                const a = document.createElement('a');
+                                a.href = url;
+                                a.download = `${data.title}.txt`;
+                                document.body.appendChild(a);
+                                a.click();
+                                window.URL.revokeObjectURL(url);
+                                document.body.removeChild(a);
+                            });
+                        } else {
+                            summaryDiv.innerHTML = '<p>No summary found for the given topic.</p>';
+                            downloadButton.classList.add('hidden');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching Wikipedia data:', error);
+                        summaryDiv.innerHTML = `<p>Failed to fetch data. Please try again later.</p>`;
+                        downloadButton.classList.add('hidden');
+                    });
+            });
+
+            clearButton.addEventListener('click', function () {
+                topicInput.value = '';
+                summaryDiv.innerHTML = '';
+                downloadButton.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>

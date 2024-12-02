@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Poppins";
+            margin: 0px;
+        }
+
+        nav {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: baseline;
+            position: fixed;
+            margin: 0px 20px 0px 0px;
+            padding: 20px;
+            z-index: 1000;
+            height: 60px;
+            width: 100%;
+            box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+        }
+
+        nav h1 {
+            padding-left: 60px;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            gap: 20px;
+        }
+
+        li {
+            padding: 0px 10px;
+            font-weight: 500;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        li:hover {
+            color: #04BF94;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+
+        li:active {
+            color: #04BF94;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+        }
+
+        .main-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            top: 90px;
+        }
+
+        .diagnose {
+            margin-top: 20px;
+            width: fit-content;
+            background-color: #04BF94;
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            padding: 10px 40px;
+            font-size: large;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .card1 {
+            display: flex;
+            flex-direction: row;
+            padding: 100px;
+            height: fit-content;
+            justify-content: center;
+            gap: 50px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .card1 img {
+            height: 379px;
+            width: 525px;
+        }
+
+        .card1 .content,
+        .card3 .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card1 button,
+        .card2 button,
+        .card3 button {
+            border: none;
+            border-radius: 50px;
+            background-color: #04BF94;
+            color: rgb(255, 255, 255);
+            font-weight: 700;
+            margin-top: 20px;
+            padding: 15px 30px;
+            width: fit-content;
+            font-size: large;
+        }
+
+        .card2 {
+            display: flex;
+            flex-direction: row;
+            padding: 100px;
+            height: fit-content;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+            padding: 30px 200px;
+            background-color: rgba(98, 221, 166, 0.05);
+        }
+
+        .card2 img {
+            height: 400px;
+            width: 300px;
+        }
+
+        .card2 content {
+            margin-left: 30px;
+        }
+
+        .card3 img {
+            height: 400px;
+            width: 300px;
+        }
+
+        .card3 {
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 100px;
+            height: fit-content;
+            justify-content: center;
+            align-items: center;
+            gap: 110px;
+            padding: 50px 200px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h1>AgriDiag</h1>
+        <ul>
+            <li>Home</li>
+            <li>Services</li>
+            <li>Blog</li>
+            <li>History</li>
+        </ul>
+    </nav>
+    <div class="main-container">
+
+        <div class="card1">
+            <div class="content">
+                <h1>What's Wrong With Your Plant?</h1>
+                <p> Become a proud owner of a healthy plant. Just scan your plants, <br>identify the disease type, and
+                    treat
+                    any sick greenery with the help <br>of our botanist experts and in-depth guides.</p>
+                <button>Diagnose Plant Problems</button>
+            </div>
+            <div class="image">
+                <img src="" alt="Image">
+            </div>
+        </div>
+        <div class="card2">
+            <div>
+                <img src="home_healthy_plants_b28cedec47.webp" alt="">
+            </div>
+            <div class="content">
+                <h1>Grow Healty Plants</h1>
+                <p>Prevent plant diseases with our advanced diagnostic tool. Detect issues early with our innovative
+                    ML-model and a vast database of plant symptoms, giving your plants the care they need to stay
+                    healthy
+                    and flourish.</p>
+                <button>Diagnose a plant</button>
+            </div>
+        </div>
+        <div class="card3">
+            <div>
+                <img src="home_expert_help_b0d533886d.webp" alt="">
+            </div>
+            <div class="content">
+                <h1>Save your plants with Expert Help</h1>
+                <p>Bring your plants back to life with direct advice from a real botanist. Get tailored guidance for any
+                    plant issue — whether it’s pests, diseases, or general decline — and watch your plant bounce back
+                    stronger than ever</p>
+                <button>Get Agriculturist Help</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
